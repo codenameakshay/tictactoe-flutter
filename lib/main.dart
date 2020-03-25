@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-import './bg.dart';
-import './pill.dart';
-import './grid.dart';
+import './bottompanel.dart';
+import './body.dart';
+import './titlebar.dart';
 
 void main() {
   runApp(MyApp());
@@ -39,115 +39,3 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class TitleBar extends StatelessWidget {
-  const TitleBar({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child:
-          Text(
-        "Tic-Tac-Toe",
-        style: TextStyle(
-          fontFamily: 'Nunito',
-          fontSize: 40,
-          color: Color(0xff050503),
-        ),
-      ),
-    );
-  }
-}
-
-class BottomPanel extends StatelessWidget {
-  const BottomPanel({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(
-            top: 12,
-            left: 10,
-            right: 10,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                  margin: EdgeInsets.only(top: 15, bottom: 35),
-                  width: 150,
-                  height: 7.5,
-                  child: Pill()),
-              // Text(
-              //   "RESET",
-              //   style: TextStyle(
-              //     fontFamily: 'Nunito',
-              //     fontSize: 40,
-              //     color: Color(0xff050503),
-              //   ),
-              // ),
-              Container(
-                width: 400,
-                height: 100,
-                child: Card(
-                  elevation: 10,
-                ),
-              ),
-              Container(
-                width: 400,
-                height: 100,
-                child: Card(
-                  elevation: 10,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class Body extends StatelessWidget {
-  const Body({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Stack(
-        children: <Widget>[
-          Container(
-            width: double.infinity,
-            height: 800,
-            child: Card(
-              margin: EdgeInsets.only(
-                bottom: 100,
-              ),
-              child: RotatedBox(quarterTurns: 2, child: BG()),
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 100, left: 20, bottom: 70),
-            width: 380,
-            height: 600,
-            child: Card(
-              elevation: 10,
-              child: Container(
-                  margin: EdgeInsets.symmetric(vertical: 50, horizontal: 25),
-                  width: 200,
-                  height: 100,
-                  child: Grid()),
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
