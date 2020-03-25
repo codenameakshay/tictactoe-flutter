@@ -2,17 +2,17 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
-class Body extends StatelessWidget {
-  Body();
+class BG extends StatelessWidget {
+  BG();
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(painter: BodyPainter());
+    return CustomPaint(painter: BGPainter());
   }
 }
 
-class BodyPainter extends CustomPainter {
-  BodyPainter();
+class BGPainter extends CustomPainter {
+  BGPainter();
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -129,12 +129,12 @@ class BodyPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRebuildSemantics(BodyPainter oldDelegate) {
+  bool shouldRebuildSemantics(BGPainter oldDelegate) {
     return shouldRepaint(oldDelegate);
   }
 
   @override
-  bool shouldRepaint(BodyPainter oldDelegate) {
+  bool shouldRepaint(BGPainter oldDelegate) {
     return false;
   }
 }
