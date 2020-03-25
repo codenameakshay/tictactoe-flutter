@@ -106,9 +106,10 @@ class BodyPainter extends CustomPainter {
                 ..shader = LinearGradient(
                         begin: Alignment(0, -1),
                         end: Alignment(0, 0.9999999999999998),
-                        stops: [0, 1],
+                        stops: [0, 0.78125, 1],
                         colors: [
                           _ColorCatalog.instance.color_2,
+                          _ColorCatalog.instance.color_3,
                           _ColorCatalog.instance.color_3
                         ],
                         tileMode: TileMode.clamp)

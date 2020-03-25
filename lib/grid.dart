@@ -18,16 +18,16 @@ class GridPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     canvas.drawColor(Colors.transparent, BlendMode.screen);
     var frame = Offset.zero & size;
-    canvas.translate(953.0000000000, 321.0000000000);
+    canvas.translate(953.0000000000, 313.0000000000);
 
-// 7:421 : Grid (COMPONENT)
-    var draw_7_421 = (Canvas canvas, Rect container) {
+// 20:3 : Grid (COMPONENT)
+    var draw_20_3 = (Canvas canvas, Rect container) {
       var frame = Rect.fromLTWH(
           -953.0000000000,
-          -321.0000000000,
+          -313.0000000000,
           (container.width - (0.0)),
           (container.height -
-              (0.0))) /* H:LEFT_RIGHT V:TOP_BOTTOM F:(l:-953,t:-321,r:953,b:953,w:267,h:267) */;
+              (0.0))) /* H:LEFT_RIGHT V:TOP_BOTTOM F:(l:-953,t:-313,r:953,b:953,w:267,h:267) */;
       canvas.save();
       canvas.transform(Float64List.fromList([
         1.0000000000,
@@ -50,268 +50,85 @@ class GridPainter extends CustomPainter {
       canvas.drawRect(Offset.zero & frame.size,
           (Paint()..color = _ColorCatalog.instance.color_0));
 
-// 7:414 : Vertical Grid (GROUP)
-      var draw_7_414 = (Canvas canvas, Rect container) {
-// 7:415 : Rectangle 3 (RECTANGLE)
-        var draw_7_415 = (Canvas canvas, Rect container) {
-          var frame = Rect.fromLTWH(87.0000000000, 0.0, 8.0000000000,
-              265.0000000000) /* H:SCALE V:SCALE F:(l:87,t:0,r:172,b:172,w:8,h:265) */;
+// 20:1 : Vector (VECTOR)
+      var draw_20_1 = (Canvas canvas, Rect container) {
+        var frame = Rect.fromLTWH(0.0, 0.0, 267.0000000000,
+            267.0000000000) /* H:SCALE V:SCALE F:(l:0,t:0,r:0,b:0,w:267,h:267) */;
+        canvas.save();
+        canvas.scale((container.width) / 267.0000000000,
+            (container.height) / 267.0000000000);
+        canvas.transform(Float64List.fromList([
+          1.0000000000,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0000000000,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          frame.left,
+          frame.top,
+          0.0,
+          1.0
+        ]));
+        var transform = Float64List.fromList([
+          (frame.width / 267.0000000000),
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          (frame.height / 267.0000000000),
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]);
+        var fillGeometry = [
+          _PathCatalog.instance.path_0.transform(transform),
+          _PathCatalog.instance.path_1.transform(transform),
+          _PathCatalog.instance.path_2.transform(transform),
+          _PathCatalog.instance.path_3.transform(transform)
+        ];
+        // fillGeometry.forEach((path) {
+        //   var effectPaint1 = _EffectCatalog.instance.paint_0;
+        //   canvas.save();
+        //   canvas.translate(0.0, 4.0000000000);
+        //   canvas.drawPath(path, effectPaint1);
+        //   canvas.restore();});
+        
+        fillGeometry.forEach((path) {
+          canvas.drawPath(path, _PaintCatalog.instance.paint_0);
+        });
+        canvas.restore();
+        fillGeometry.forEach((path) {
+          // var effectPaint2 = _EffectCatalog.instance.paint_1;
+          // canvas.save();
+          // canvas.translate(0.0, 0.0000000000);
+          // canvas.scale(1.132,1.205);
+          // canvas.drawPath(path, effectPaint2);
+          // canvas.restore();
+          var effectPaint1 = _EffectCatalog.instance.paint_2;
           canvas.save();
-          canvas.scale((container.width) / 267.0000000000,
-              (container.height) / 267.0000000000);
-          canvas.transform(Float64List.fromList([
-            1.0000000000,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0000000000,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0,
-            0.0,
-            frame.left,
-            frame.top,
-            0.0,
-            1.0
-          ]));
-          var transform = Float64List.fromList([
-            (frame.width / 8.0000000000),
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            (frame.height / 265.0000000000),
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0
-          ]);
-          var fillGeometry = [
-            Path()
-              ..addRRect(RRect.fromRectAndRadius(
-                  Rect.fromLTWH(0.0, 0.0, frame.width, frame.height),
-                  Radius.circular(4)))
-          ];
-          fillGeometry.forEach((path) {
-            var effectPaint = _EffectCatalog.instance.paint_0;
-            canvas.save();
-            canvas.translate(0.0, 4.0000000000);
-            canvas.drawPath(path, effectPaint);
-            canvas.restore();
-          });
-          fillGeometry.forEach((path) {
-            canvas.drawPath(path, _PaintCatalog.instance.paint_0);
-          });
+          canvas.translate(0.0, 0.0000000000);
+          canvas.scale(1.132,1.205);
+          canvas.drawPath(path, effectPaint1);
           canvas.restore();
-        };
-        draw_7_415(canvas, frame);
-
-// 7:416 : Rectangle 4 (RECTANGLE)
-        var draw_7_416 = (Canvas canvas, Rect container) {
-          var frame = Rect.fromLTWH(176.0000000000, 2.0000000000, 8.0000000000,
-              265.0000000000) /* H:SCALE V:SCALE F:(l:176,t:2,r:83,b:83,w:8,h:265) */;
-          canvas.save();
-          canvas.scale((container.width) / 267.0000000000,
-              (container.height) / 267.0000000000);
-          canvas.transform(Float64List.fromList([
-            1.0000000000,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0000000000,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0,
-            0.0,
-            frame.left,
-            frame.top,
-            0.0,
-            1.0
-          ]));
-          var transform = Float64List.fromList([
-            (frame.width / 8.0000000000),
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            (frame.height / 265.0000000000),
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0
-          ]);
-          var fillGeometry = [
-            Path()
-              ..addRRect(RRect.fromRectAndRadius(
-                  Rect.fromLTWH(0.0, 0.0, frame.width, frame.height),
-                  Radius.circular(4)))
-          ];
-          fillGeometry.forEach((path) {
-            var effectPaint = _EffectCatalog.instance.paint_0;
-            canvas.save();
-            canvas.translate(0.0, 4.0000000000);
-            canvas.drawPath(path, effectPaint);
-            canvas.restore();
-          });
-          fillGeometry.forEach((path) {
-            canvas.drawPath(path, _PaintCatalog.instance.paint_0);
-          });
-          canvas.restore();
-        };
-        draw_7_416(canvas, frame);
+        });
       };
-      draw_7_414(canvas, frame);
-
-// 7:417 : Horizontal Grid (GROUP)
-      var draw_7_417 = (Canvas canvas, Rect container) {
-// 7:418 : Rectangle 3 (RECTANGLE)
-        var draw_7_418 = (Canvas canvas, Rect container) {
-          var frame = Rect.fromLTWH(0.0, 180.0000000000, 8.0000000000,
-              265.0000000000) /* H:SCALE V:SCALE F:(l:0,t:180,r:259,b:259,w:8,h:265) */;
-          canvas.save();
-          canvas.scale((container.width) / 267.0000000000,
-              (container.height) / 267.0000000000);
-          canvas.transform(Float64List.fromList([
-            0.0000000119,
-            1.0000000000,
-            0.0,
-            0.0,
-            -1.0000000000,
-            0.0000000119,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0,
-            0.0,
-            frame.left,
-            frame.top,
-            0.0,
-            1.0
-          ]));
-          var transform = Float64List.fromList([
-            (frame.width / 8.0000000000),
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            (frame.height / 265.0000000000),
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0
-          ]);
-          var fillGeometry = [
-            Path()
-              ..addRRect(RRect.fromRectAndRadius(
-                  Rect.fromLTWH(0.0, 0.0, frame.width, frame.height),
-                  Radius.circular(4)))
-          ];
-          fillGeometry.forEach((path) {
-            var effectPaint = _EffectCatalog.instance.paint_0;
-            canvas.save();
-            canvas.translate(0.0, 4.0000000000);
-            canvas.drawPath(path, effectPaint);
-            canvas.restore();
-          });
-          fillGeometry.forEach((path) {
-            canvas.drawPath(path, _PaintCatalog.instance.paint_0);
-          });
-          canvas.restore();
-        };
-        draw_7_418(canvas, frame);
-
-// 7:419 : Rectangle 4 (RECTANGLE)
-        var draw_7_419 = (Canvas canvas, Rect container) {
-          var frame = Rect.fromLTWH(2.0000010613, 91.0000000238, 8.0000000000,
-              265.0000000000) /* H:SCALE V:SCALE F:(l:2.000001061314377,t:91.00000002384976,r:256.9999989386856,b:256.9999989386856,w:8,h:265) */;
-          canvas.save();
-          canvas.scale((container.width) / 267.0000000000,
-              (container.height) / 267.0000000000);
-          canvas.transform(Float64List.fromList([
-            0.0000000119,
-            1.0000000000,
-            0.0,
-            0.0,
-            -1.0000000000,
-            0.0000000119,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0,
-            0.0,
-            frame.left,
-            frame.top,
-            0.0,
-            1.0
-          ]));
-          var transform = Float64List.fromList([
-            (frame.width / 8.0000000000),
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            (frame.height / 265.0000000000),
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            1.0
-          ]);
-          var fillGeometry = [
-            Path()
-              ..addRRect(RRect.fromRectAndRadius(
-                  Rect.fromLTWH(0.0, 0.0, frame.width, frame.height),
-                  Radius.circular(4)))
-          ];
-          fillGeometry.forEach((path) {
-            var effectPaint = _EffectCatalog.instance.paint_0;
-            canvas.save();
-            canvas.translate(0.0, 4.0000000000);
-            canvas.drawPath(path, effectPaint);
-            canvas.restore();
-          });
-          fillGeometry.forEach((path) {
-            canvas.drawPath(path, _PaintCatalog.instance.paint_0);
-          });
-          canvas.restore();
-        };
-        draw_7_419(canvas, frame);
-      };
-      draw_7_417(canvas, frame);
+      draw_20_1(canvas, frame);
       canvas.restore();
     };
-    draw_7_421(canvas, frame);
+    draw_20_3(canvas, frame);
   }
 
   @override
@@ -331,14 +148,95 @@ class GridPainter extends CustomPainter {
 }
 
 class _PathCatalog {
-  _PathCatalog() {}
+  _PathCatalog() {
+    this.path_0 = _build_0();
+    this.path_1 = _build_1();
+    this.path_2 = _build_2();
+    this.path_3 = _build_3();
+  }
+
+  Path path_0;
+
+  Path path_1;
+
+  Path path_2;
+
+  Path path_3;
 
   static final _PathCatalog instance = _PathCatalog();
+
+  static Path _build_0() {
+    var path = Path();
+    path.moveTo(87.0000000000, 4.0000000000);
+    path.cubicTo(
+        87.0000000000, 1.7908600000, 88.7909000000, 0.0, 91.0000000000, 0.0);
+    path.cubicTo(93.2091000000, 0.0, 95.0000000000, 1.7908600000, 95.0000000000,
+        4.0000000000);
+    path.lineTo(95.0000000000, 261.0000000000);
+    path.cubicTo(95.0000000000, 263.2090000000, 93.2091000000, 265.0000000000,
+        91.0000000000, 265.0000000000);
+    path.cubicTo(88.7909000000, 265.0000000000, 87.0000000000, 263.2090000000,
+        87.0000000000, 261.0000000000);
+    path.lineTo(87.0000000000, 4.0000000000);
+    path.close();
+    return path;
+  }
+
+  static Path _build_1() {
+    var path = Path();
+    path.moveTo(176.0000000000, 6.0000000000);
+    path.cubicTo(176.0000000000, 3.7908600000, 177.7910000000, 2.0000000000,
+        180.0000000000, 2.0000000000);
+    path.cubicTo(182.2090000000, 2.0000000000, 184.0000000000, 3.7908600000,
+        184.0000000000, 6.0000000000);
+    path.lineTo(184.0000000000, 263.0000000000);
+    path.cubicTo(184.0000000000, 265.2090000000, 182.2090000000, 267.0000000000,
+        180.0000000000, 267.0000000000);
+    path.cubicTo(177.7910000000, 267.0000000000, 176.0000000000, 265.2090000000,
+        176.0000000000, 263.0000000000);
+    path.lineTo(176.0000000000, 6.0000000000);
+    path.close();
+    return path;
+  }
+
+  static Path _build_2() {
+    var path = Path();
+    path.moveTo(4.0000000000, 180.0000000000);
+    path.cubicTo(1.7908600000, 180.0000000000, -0.0000000263, 178.2090000000,
+        0.0, 176.0000000000);
+    path.cubicTo(0.0000000263, 173.7910000000, 1.7908600000, 172.0000000000,
+        4.0000000000, 172.0000000000);
+    path.lineTo(261.0000000000, 172.0000000000);
+    path.cubicTo(263.2090000000, 172.0000000000, 265.0000000000, 173.7910000000,
+        265.0000000000, 176.0000000000);
+    path.cubicTo(265.0000000000, 178.2090000000, 263.2090000000, 180.0000000000,
+        261.0000000000, 180.0000000000);
+    path.lineTo(4.0000000000, 180.0000000000);
+    path.close();
+    return path;
+  }
+
+  static Path _build_3() {
+    var path = Path();
+    path.moveTo(6.0000000000, 91.0000000000);
+    path.cubicTo(3.7908600000, 91.0000000000, 2.0000000000, 89.2091000000,
+        2.0000000000, 87.0000000000);
+    path.cubicTo(2.0000000000, 84.7909000000, 3.7908600000, 83.0000000000,
+        6.0000000000, 83.0000000000);
+    path.lineTo(263.0000000000, 83.0000000000);
+    path.cubicTo(265.2090000000, 83.0000000000, 267.0000000000, 84.7909000000,
+        267.0000000000, 87.0000000000);
+    path.cubicTo(267.0000000000, 89.2091000000, 265.2090000000, 91.0000000000,
+        263.0000000000, 91.0000000000);
+    path.lineTo(6.0000000000, 91.0000000000);
+    path.close();
+    return path;
+  }
 }
 
 class _PaintCatalog {
   _PaintCatalog() {
-    this.paint_0 = (Paint()..color = _ColorCatalog.instance.color_1);
+    this.paint_0 = (Paint()..color = _ColorCatalog.instance.color_2);
   }
 
   Paint paint_0;
@@ -348,10 +246,25 @@ class _PaintCatalog {
 
 class _EffectCatalog {
   _EffectCatalog() {
-    this.paint_0 = Paint();
+    this.paint_0 = (Paint()
+      ..color = _ColorCatalog.instance.color_1
+      ..maskFilter =
+          MaskFilter.blur(BlurStyle.normal, Shadow.convertRadiusToSigma(10)));
+    this.paint_1 = Paint()
+      ..color = _ColorCatalog.instance.color_1
+      ..maskFilter =
+          MaskFilter.blur(BlurStyle.outer, Shadow.convertRadiusToSigma(20));
+    this.paint_2 = Paint()
+      ..color = Colors.black54
+      ..maskFilter =
+          MaskFilter.blur(BlurStyle.inner, 15);
   }
 
   Paint paint_0;
+
+  Paint paint_1;
+
+  Paint paint_2;
 
   static final _EffectCatalog instance = _EffectCatalog();
 }
@@ -359,12 +272,15 @@ class _EffectCatalog {
 class _ColorCatalog {
   _ColorCatalog() {
     this.color_0 = Color.fromARGB(0, 0, 0, 0);
-    this.color_1 = Color.fromARGB(255, 227, 164, 16);
+    this.color_1 = Color.fromARGB(63, 0, 0, 0);
+    this.color_2 = Color.fromARGB(255, 255, 183, 0);
   }
 
   Color color_0;
 
   Color color_1;
+
+  Color color_2;
 
   static final _ColorCatalog instance = _ColorCatalog();
 }

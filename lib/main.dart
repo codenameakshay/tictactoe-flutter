@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import './body.dart';
 import './pill.dart';
-import 'package:flutter/cupertino.dart';
-
+import './grid.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           elevation: 10,
-          backgroundColor: Color(0xffe3a410),
+          backgroundColor: Color(0xfff5b002),
           title: Center(
             child:
                 // Container(width: 150, height: 36, child: TICTACTOE())
@@ -37,9 +36,10 @@ class MyApp extends StatelessWidget {
           parallaxEnabled: true,
           renderPanelSheet: true,
           color: Color(0xffeb4934),
-          borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
-          minHeight: 50,
-          maxHeight: 260,
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(15), topRight: Radius.circular(15)),
+          minHeight: 60,
+          maxHeight: 280,
           margin: EdgeInsets.only(top: 100),
           backdropEnabled: true,
           panel: Stack(
@@ -53,7 +53,11 @@ class MyApp extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Container(margin: EdgeInsets.only(top:10, bottom:20), width: 150, height: 7.5, child: Pill()),
+                    Container(
+                        margin: EdgeInsets.only(top: 15, bottom: 35),
+                        width: 150,
+                        height: 7.5,
+                        child: Pill()),
                     // Text(
                     //   "RESET",
                     //   style: TextStyle(
@@ -65,12 +69,16 @@ class MyApp extends StatelessWidget {
                     Container(
                       width: 400,
                       height: 100,
-                      child: Card(),
+                      child: Card(
+                        elevation: 10,
+                      ),
                     ),
                     Container(
                       width: 400,
                       height: 100,
-                      child: Card(),
+                      child: Card(
+                        elevation: 10,
+                      ),
                     ),
                   ],
                 ),
@@ -78,15 +86,31 @@ class MyApp extends StatelessWidget {
             ],
           ),
           body: Center(
-            child: Container(
-              width: double.infinity,
-              height: 800,
-              child: Card(
-                margin: EdgeInsets.only(
-                  bottom: 100,
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  width: double.infinity,
+                  height: 800,
+                  child: Card(
+                    margin: EdgeInsets.only(
+                      bottom: 100,
+                    ),
+                    child: RotatedBox(quarterTurns: 2, child: Body()),
+                  ),
                 ),
-                child: Body(),
-              ),
+                Container(
+                  padding: EdgeInsets.only(top: 100, left: 20, bottom: 70),
+                  width: 380,
+                  height: 600,
+                  child: Card(
+                    elevation: 10,
+                    child: Container(margin: EdgeInsets.symmetric(vertical:50,horizontal: 25),
+                        width: 200,
+                        height: 100,
+                        child: Grid()),
+                  ),
+                )
+              ],
             ),
           ),
         ),
