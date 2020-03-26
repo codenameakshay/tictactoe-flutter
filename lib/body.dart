@@ -101,7 +101,7 @@ class _BodyState extends State<Body> {
             crossButton[6] == 1)) {
       screen = LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-          widget.controller.animatePanelToPosition(1);
+          // Toast.show("Swipe up on pill for options", context, duration: Toast.LENGTH_SHORT, gravity:  Toast.BOTTOM);
           return Center(
             child: Stack(
               children: <Widget>[
@@ -133,15 +133,24 @@ class _BodyState extends State<Body> {
                         children: <Widget>[
                           Container(
                             margin: EdgeInsets.symmetric(
-                                vertical: constraints.maxHeight / 15.67777,
+                                vertical: constraints.maxHeight / 18.67777,
                                 horizontal: constraints.maxWidth / 15.99999),
                             width: constraints.maxWidth / 0.99999,
                             height: constraints.maxWidth / 0.83888,
                             child: Center(
-                                child: Text(
-                              'Player 1 Won!',
-                              style: TextStyle(fontSize: 20),
-                            )),
+                              child: Column(
+                                children: <Widget>[
+                                  Text(
+                                    'Player 1 Won!',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                  Text(
+                                    'Swipe up for restart',
+                                    style: TextStyle(fontSize: 10),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
                         ],
                       ),
@@ -203,7 +212,7 @@ class _BodyState extends State<Body> {
             noughtButton[6] == 1)) {
       screen = LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-          widget.controller.animatePanelToPosition(1);
+          // Toast.show("Swipe up on pill for options", context, duration: Toast.LENGTH_SHORT, gravity:  Toast.BOTTOM);
           return Center(
             child: Stack(
               children: <Widget>[
@@ -240,10 +249,18 @@ class _BodyState extends State<Body> {
                             width: constraints.maxWidth / 0.99999,
                             height: constraints.maxWidth / 0.83888,
                             child: Center(
-                                child: Text(
-                              'Player 2 Won!',
-                              style: TextStyle(fontSize: 20),
-                            )),
+                                child: Column(
+                                children: <Widget>[
+                                  Text(
+                                    'Player 2 Won!',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                  Text(
+                                    'Swipe up for restart',
+                                    style: TextStyle(fontSize: 10),
+                                  ),
+                                ],
+                              ),),
                           ),
                         ],
                       ),
@@ -266,7 +283,7 @@ class _BodyState extends State<Body> {
         enabledButton[8] == 1) {
       screen = LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-          widget.controller.animatePanelToPosition(1);
+          // widget.controller.animatePanelToPosition(1);
           return Center(
             child: Stack(
               children: <Widget>[
@@ -303,10 +320,18 @@ class _BodyState extends State<Body> {
                             width: constraints.maxWidth / 0.99999,
                             height: constraints.maxWidth / 0.83888,
                             child: Center(
-                                child: Text(
-                              'Match Draw',
-                              style: TextStyle(fontSize: 20),
-                            )),
+                                child: Column(
+                                children: <Widget>[
+                                  Text(
+                                    'Match Draw!',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                  Text(
+                                    'Swipe up for restart',
+                                    style: TextStyle(fontSize: 10),
+                                  ),
+                                ],
+                              ),),
                           ),
                         ],
                       ),
