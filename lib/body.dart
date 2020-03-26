@@ -5,9 +5,15 @@ import './bg.dart';
 import './gamebutton.dart';
 
 class Body extends StatelessWidget {
-  const Body({
-    Key key,
-  }) : super(key: key);
+  var lastPress = "O";
+  Body();
+  void lastButton(var value) {
+    this.lastPress = value;
+  }
+
+  String lastButtonValue() {
+    return this.lastPress;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +67,9 @@ class Body extends StatelessWidget {
                                     EdgeInsets.all(constraints.maxWidth / 24),
                                 child: GameButton(
                                   id: index + 1,
-                                  text: 'B$index',
+                                  text:'',
+                                  lbset: lastButton,
+                                  lbget: lastButtonValue,
                                 ),
                               );
                             },
@@ -79,3 +87,4 @@ class Body extends StatelessWidget {
     );
   }
 }
+

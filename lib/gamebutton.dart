@@ -7,13 +7,18 @@ class GameButton extends StatefulWidget {
   Color bg;
   bool enabled;
   bool cross;
+  Function lbset;
+  Function lbget;
 
-  GameButton(
-      {this.id,
-      this.text = "",
-      this.bg = const Color(0xffe5e5e5),
-      this.enabled = true,
-      this.cross = true});
+  GameButton({
+    this.id,
+    this.text = "",
+    this.bg = const Color(0xffe5e5e5),
+    this.enabled = false,
+    this.cross = false,
+    this.lbset,
+    this.lbget,
+  });
 
   @override
   _GameButtonState createState() => _GameButtonState();
@@ -33,17 +38,45 @@ class _GameButtonState extends State<GameButton> {
           : Text(widget.text),
       onPressed: () {
         print(widget.id);
+        print(widget.lbget());
         HapticFeedback.vibrate();
         setState(() {
-          if (widget.enabled && widget.cross) {
-            widget.cross = false;
-          } else if (widget.enabled && !widget.cross) {
-            widget.enabled = false;
-          } else if (!widget.enabled && widget.cross) {
-            widget.enabled = true;
-          } else {
-            widget.enabled = true;
-            widget.cross = true;
+          if (widget.lbget() == "X") {
+            if (widget.enabled && widget.cross) {
+              widget.enabled = true;
+              widget.cross = true;
+              widget.lbset("X");
+            } else if (widget.enabled && !widget.cross) {
+              widget.enabled = true;
+              widget.cross = false;
+              widget.lbset("X");
+            } else if (!widget.enabled && widget.cross) {
+              widget.enabled = true;
+              widget.cross = false;
+              widget.lbset("O");
+            } else {
+              widget.enabled = true;
+              widget.cross = false;
+              widget.lbset("O");
+            }
+          } else if (widget.lbget() == "O") {
+            if (widget.enabled && widget.cross) {
+              widget.enabled = true;
+              widget.cross = true;
+              widget.lbset("O");
+            } else if (widget.enabled && !widget.cross) {
+              widget.enabled = true;
+              widget.cross = false;
+              widget.lbset("O");
+            } else if (!widget.enabled && widget.cross) {
+              widget.enabled = true;
+              widget.cross = true;
+              widget.lbset("X");
+            } else {
+              widget.enabled = true;
+              widget.cross = true;
+              widget.lbset("X");
+            }
           }
         });
       },
