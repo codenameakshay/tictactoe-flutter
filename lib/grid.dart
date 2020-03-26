@@ -55,8 +55,6 @@ class GridPainter extends CustomPainter {
         var frame = Rect.fromLTWH(0.0, 0.0, 267.0000000000,
             267.0000000000) /* H:SCALE V:SCALE F:(l:0,t:0,r:0,b:0,w:267,h:267) */;
         canvas.save();
-        print(container.width);
-        print(container.height);
         canvas.scale((container.width) / 267.0000000000,
             (container.height) / 267.0000000000);
         canvas.transform(Float64List.fromList([
