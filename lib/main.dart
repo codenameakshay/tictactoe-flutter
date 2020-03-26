@@ -47,7 +47,8 @@ class MyApp extends StatelessWidget {
         ),
         body: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {
-            return SlidingUpPanel(controller: controller,
+            return SlidingUpPanel(
+              controller: controller,
               backdropColor: Color(0xffdedcca),
               parallaxOffset: 0.5,
               backdropTapClosesPanel: true,
@@ -60,7 +61,7 @@ class MyApp extends StatelessWidget {
               maxHeight: constraints.maxHeight / 2.5142,
               margin: EdgeInsets.only(top: constraints.maxHeight / 7.039999),
               backdropEnabled: true,
-              panel: BottomPanel(),
+              panel: BottomPanel(controller: controller),
               body: Body(controller: controller),
             );
           },

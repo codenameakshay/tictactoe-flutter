@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tictactoe/main.dart';
 import './pill.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class BottomPanel extends StatelessWidget {
-  const BottomPanel({
-    Key key,
-  }) : super(key: key);
+  PanelController controller;
+  BottomPanel({this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -38,21 +39,32 @@ class BottomPanel extends StatelessWidget {
                     width: constraints.maxWidth,
                     height: constraints.maxHeight / 2.8,
                     child: Card(
-                        elevation: 10,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 15),
-                          child: ListTile(
-                            leading: Icon(
-                              Icons.refresh,
-                              size: 30,
-                            ),
-                            title: Text(
-                              'Restart',
-                              style: TextStyle(fontSize: 24),
+                      elevation: 10,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 15),
+                        child: ListTile(
+                          onTap: () {
+                            Navigator.of(context)
+                                .push(MaterialPageRoute(builder: (context) {
+                              return MyApp();
+                            }));
+                          },
+                          leading: Icon(
+                            Icons.refresh,
+                            size: 30,
+                            color: Color(0xffeb4934),
+                          ),
+                          title: Text(
+                            'Restart',
+                            style: TextStyle(
+                              fontSize: 24,
+                              color: Color(0xffeb4934),
                             ),
                           ),
-                        )),
+                        ),
+                      ),
+                    ),
                   ),
                   Container(
                     width: constraints.maxWidth,
@@ -63,13 +75,20 @@ class BottomPanel extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 10, vertical: 15),
                         child: ListTile(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
                           leading: Icon(
                             Icons.exit_to_app,
                             size: 30,
+                            color: Color(0xffeb4934),
                           ),
                           title: Text(
                             'Exit',
-                            style: TextStyle(fontSize: 24),
+                            style: TextStyle(
+                              fontSize: 24,
+                              color: Color(0xffeb4934),
+                            ),
                           ),
                         ),
                       ),
