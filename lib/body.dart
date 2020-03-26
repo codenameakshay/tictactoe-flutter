@@ -124,24 +124,27 @@ class _BodyState extends State<Body> {
                   ),
                   width: constraints.maxWidth / 1.15262,
                   height: constraints.maxHeight / 1.90648,
-                  child: Card(
-                    color: Color(0xffe5e5e5),
-                    elevation: 10,
-                    child: Stack(
-                      children: <Widget>[
-                        Container(
-                          margin: EdgeInsets.symmetric(
-                              vertical: constraints.maxHeight / 15.67777,
-                              horizontal: constraints.maxWidth / 15.99999),
-                          width: constraints.maxWidth / 0.99999,
-                          height: constraints.maxWidth / 0.83888,
-                          child: Center(
-                              child: Text(
-                            'Player 1 Won!',
-                            style: TextStyle(fontSize: 20),
-                          )),
-                        ),
-                      ],
+                  child: Hero(
+                    tag: "card-result",
+                    child: Card(
+                      color: Color(0xffe5e5e5),
+                      elevation: 10,
+                      child: Stack(
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                                vertical: constraints.maxHeight / 15.67777,
+                                horizontal: constraints.maxWidth / 15.99999),
+                            width: constraints.maxWidth / 0.99999,
+                            height: constraints.maxWidth / 0.83888,
+                            child: Center(
+                                child: Text(
+                              'Player 1 Won!',
+                              style: TextStyle(fontSize: 20),
+                            )),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 )
@@ -223,24 +226,27 @@ class _BodyState extends State<Body> {
                   ),
                   width: constraints.maxWidth / 1.15262,
                   height: constraints.maxHeight / 1.90648,
-                  child: Card(
-                    color: Color(0xffe5e5e5),
-                    elevation: 10,
-                    child: Stack(
-                      children: <Widget>[
-                        Container(
-                          margin: EdgeInsets.symmetric(
-                              vertical: constraints.maxHeight / 15.67777,
-                              horizontal: constraints.maxWidth / 15.99999),
-                          width: constraints.maxWidth / 0.99999,
-                          height: constraints.maxWidth / 0.83888,
-                          child: Center(
-                              child: Text(
-                            'Player 2 Won!',
-                            style: TextStyle(fontSize: 20),
-                          )),
-                        ),
-                      ],
+                  child: Hero(
+                    tag: "card-result",
+                    child: Card(
+                      color: Color(0xffe5e5e5),
+                      elevation: 10,
+                      child: Stack(
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                                vertical: constraints.maxHeight / 15.67777,
+                                horizontal: constraints.maxWidth / 15.99999),
+                            width: constraints.maxWidth / 0.99999,
+                            height: constraints.maxWidth / 0.83888,
+                            child: Center(
+                                child: Text(
+                              'Player 2 Won!',
+                              style: TextStyle(fontSize: 20),
+                            )),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 )
@@ -283,24 +289,27 @@ class _BodyState extends State<Body> {
                   ),
                   width: constraints.maxWidth / 1.15262,
                   height: constraints.maxHeight / 1.90648,
-                  child: Card(
-                    color: Color(0xffe5e5e5),
-                    elevation: 10,
-                    child: Stack(
-                      children: <Widget>[
-                        Container(
-                          margin: EdgeInsets.symmetric(
-                              vertical: constraints.maxHeight / 15.67777,
-                              horizontal: constraints.maxWidth / 15.99999),
-                          width: constraints.maxWidth / 0.99999,
-                          height: constraints.maxWidth / 0.83888,
-                          child: Center(
-                              child: Text(
-                            'Match Draw',
-                            style: TextStyle(fontSize: 20),
-                          )),
-                        ),
-                      ],
+                  child: Hero(
+                    tag: "card-result",
+                    child: Card(
+                      color: Color(0xffe5e5e5),
+                      elevation: 10,
+                      child: Stack(
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                                vertical: constraints.maxHeight / 15.67777,
+                                horizontal: constraints.maxWidth / 15.99999),
+                            width: constraints.maxWidth / 0.99999,
+                            height: constraints.maxWidth / 0.83888,
+                            child: Center(
+                                child: Text(
+                              'Match Draw',
+                              style: TextStyle(fontSize: 20),
+                            )),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 )
@@ -333,48 +342,51 @@ class _BodyState extends State<Body> {
                   ),
                   width: constraints.maxWidth / 1.05262,
                   height: constraints.maxHeight / 1.30648,
-                  child: Card(
-                    color: Color(0xffe5e5e5),
-                    elevation: 10,
-                    child: Stack(
-                      children: <Widget>[
-                        Container(
-                          margin: EdgeInsets.symmetric(
-                              vertical: constraints.maxHeight / 15.67777,
-                              horizontal: constraints.maxWidth / 15.99999),
-                          width: constraints.maxWidth / 0.99999,
-                          height: constraints.maxWidth / 0.83888,
-                          child: Grid(),
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(
-                              vertical: constraints.maxHeight / 13.67777,
-                              horizontal: constraints.maxWidth / 15.99999),
-                          child: GridView.count(
-                            crossAxisCount: 3,
-                            children: List.generate(
-                              9,
-                              (index) {
-                                return Container(
-                                  padding:
-                                      EdgeInsets.all(constraints.maxWidth / 24),
-                                  child: GameButton(
-                                    id: index,
-                                    text: '',
-                                    enabled: enabledButton[index],
-                                    cross: crossButton[index],
-                                    lbset: lastButton,
-                                    lbget: lastButtonValue,
-                                    sebv: setEnabledButton,
-                                    scbv: setCrossButton,
-                                    snbv: setNoughtButton,
-                                  ),
-                                );
-                              },
+                  child: Hero(
+                    tag: "card-result",
+                    child: Card(
+                      color: Color(0xffe5e5e5),
+                      elevation: 10,
+                      child: Stack(
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                                vertical: constraints.maxHeight / 15.67777,
+                                horizontal: constraints.maxWidth / 15.99999),
+                            width: constraints.maxWidth / 0.99999,
+                            height: constraints.maxWidth / 0.83888,
+                            child: Grid(),
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                                vertical: constraints.maxHeight / 13.67777,
+                                horizontal: constraints.maxWidth / 15.99999),
+                            child: GridView.count(
+                              crossAxisCount: 3,
+                              children: List.generate(
+                                9,
+                                (index) {
+                                  return Container(
+                                    padding: EdgeInsets.all(
+                                        constraints.maxWidth / 24),
+                                    child: GameButton(
+                                      id: index,
+                                      text: '',
+                                      enabled: enabledButton[index],
+                                      cross: crossButton[index],
+                                      lbset: lastButton,
+                                      lbget: lastButtonValue,
+                                      sebv: setEnabledButton,
+                                      scbv: setCrossButton,
+                                      snbv: setNoughtButton,
+                                    ),
+                                  );
+                                },
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 )

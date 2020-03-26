@@ -38,14 +38,41 @@ class BottomPanel extends StatelessWidget {
                     width: constraints.maxWidth,
                     height: constraints.maxHeight / 2.8,
                     child: Card(
-                      elevation: 10,
-                    ),
+                        elevation: 10,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 15),
+                          child: ListTile(
+                            leading: Icon(
+                              Icons.refresh,
+                              size: 30,
+                            ),
+                            title: Text(
+                              'Restart',
+                              style: TextStyle(fontSize: 24),
+                            ),
+                          ),
+                        )),
                   ),
                   Container(
                     width: constraints.maxWidth,
                     height: constraints.maxHeight / 2.8,
                     child: Card(
                       elevation: 10,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 15),
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.exit_to_app,
+                            size: 30,
+                          ),
+                          title: Text(
+                            'Exit',
+                            style: TextStyle(fontSize: 24),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ],
