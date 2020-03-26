@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import './grid.dart';
 import './bg.dart';
+import './gamebutton.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -56,15 +57,11 @@ class Body extends StatelessWidget {
                             9,
                             (index) {
                               return Container(
-                                padding: EdgeInsets.all(constraints.maxWidth/24),
-                                child: RaisedButton(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                                splashColor: Color(0xffeb4934),
-                                  color: Color(0xffe5e5e5),
-                                  elevation: 0,
-                                  child: Icon(Icons.wb_sunny),
-                                  onPressed: () {
-                                    HapticFeedback.vibrate();
-                                  },
+                                padding:
+                                    EdgeInsets.all(constraints.maxWidth / 24),
+                                child: GameButton(
+                                  id: index + 1,
+                                  text: 'B$index',
                                 ),
                               );
                             },
