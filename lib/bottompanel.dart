@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tictactoe/main.dart';
 import './pill.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'dart:io';
 
 class BottomPanel extends StatelessWidget {
   PanelController controller;
@@ -76,7 +77,7 @@ class BottomPanel extends StatelessWidget {
                             horizontal: 10, vertical: 15),
                         child: ListTile(
                           onTap: () {
-                            Navigator.pop(context);
+                            exit(0);
                           },
                           leading: Icon(
                             Icons.exit_to_app,

@@ -244,7 +244,7 @@ class _BodyState extends State<Body> {
                         children: <Widget>[
                           Container(
                             margin: EdgeInsets.symmetric(
-                                vertical: constraints.maxHeight / 15.67777,
+                                vertical: constraints.maxHeight / 18.67777,
                                 horizontal: constraints.maxWidth / 15.99999),
                             width: constraints.maxWidth / 0.99999,
                             height: constraints.maxWidth / 0.83888,
@@ -315,7 +315,7 @@ class _BodyState extends State<Body> {
                         children: <Widget>[
                           Container(
                             margin: EdgeInsets.symmetric(
-                                vertical: constraints.maxHeight / 15.67777,
+                                vertical: constraints.maxHeight / 18.67777,
                                 horizontal: constraints.maxWidth / 15.99999),
                             width: constraints.maxWidth / 0.99999,
                             height: constraints.maxWidth / 0.83888,
