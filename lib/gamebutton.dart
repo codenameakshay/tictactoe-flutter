@@ -43,8 +43,6 @@ class _GameButtonState extends State<GameButton> {
           ? (widget.cross == 1 ? Text('X') : Text('O'))
           : Text(widget.text),
       onPressed: () {
-        print(widget.id);
-        print(widget.lbget());
         HapticFeedback.vibrate();
         setState(() {
           if (widget.lbget() == "X") {

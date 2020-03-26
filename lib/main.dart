@@ -4,6 +4,8 @@ import './bottompanel.dart';
 import './body.dart';
 import './titlebar.dart';
 
+var controller = PanelController();
+
 void main() {
   runApp(MyApp());
 }
@@ -45,7 +47,7 @@ class MyApp extends StatelessWidget {
         ),
         body: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {
-            return SlidingUpPanel(
+            return SlidingUpPanel(controller: controller,
               backdropColor: Color(0xffdedcca),
               parallaxOffset: 0.5,
               backdropTapClosesPanel: true,
@@ -59,7 +61,7 @@ class MyApp extends StatelessWidget {
               margin: EdgeInsets.only(top: constraints.maxHeight / 7.039999),
               backdropEnabled: true,
               panel: BottomPanel(),
-              body: Body(),
+              body: Body(controller: controller),
             );
           },
         ),
