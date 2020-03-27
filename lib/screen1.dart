@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
-import 'package:audioplayers/audioplayers.dart';
 import './bg.dart';
 import 'dart:async';
 
@@ -12,15 +11,11 @@ class Screen1 extends StatefulWidget {
 class _Screen1State extends State<Screen1> {
   @override
   Widget build(BuildContext context) {
+    AudioCache player = AudioCache();
+    player.play('sound/Win.mp3');
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         // Toast.show("Swipe up on pill for options", context, duration: Toast.LENGTH_SHORT, gravity:  Toast.BOTTOM);
-        Future<AudioPlayer> playLocalAsset() async {
-          AudioCache cache = new AudioCache();
-          return await cache.play("Win.mp3");
-        }
-
-        playLocalAsset();
 
         return Center(
           child: Stack(

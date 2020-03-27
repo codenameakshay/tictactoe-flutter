@@ -3,7 +3,6 @@ import 'package:tictactoe/main.dart';
 import './pill.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:audioplayers/audio_cache.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'dart:io';
 import 'dart:async';
 
@@ -49,12 +48,9 @@ class BottomPanel extends StatelessWidget {
                             horizontal: 10, vertical: 15),
                         child: ListTile(
                           onTap: () {
-                            Future<AudioPlayer> playLocalAsset() async {
-                              AudioCache cache = new AudioCache();
-                              return await cache.play("Restart.mp3");
-                            }
+                            AudioCache player = AudioCache();
+                            player.play('sound/Restart.mp3');
 
-                            playLocalAsset();
                             Navigator.push(
                               context,
                               PageRouteBuilder(

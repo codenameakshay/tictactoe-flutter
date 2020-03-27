@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:audioplayers/audio_cache.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'dart:async';
 
 class GameButton extends StatefulWidget {
@@ -49,13 +48,9 @@ class _GameButtonState extends State<GameButton> {
             ? (widget.cross == 1 ? Text('X') : Text('O'))
             : Text(widget.text),
         onPressed: () {
-          Future<AudioPlayer> playLocalAsset() async {
-            AudioCache cache = new AudioCache();
-            return await cache.play("ButtonPress.mp3");
-          }
-          SystemSound.play(SystemSoundType.click);
+          AudioCache player = AudioCache();
+        player.play('sound/ButtonPress.mp3');
 
-          playLocalAsset();
           HapticFeedback.vibrate();
           setState(() {
             if (widget.lbget() == "X") {
