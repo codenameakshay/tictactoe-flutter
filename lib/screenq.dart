@@ -5,7 +5,8 @@ import 'dart:io';
 class ScreenQ extends StatefulWidget {
   Function func1;
   Function func2;
-  ScreenQ(this.func1, this.func2);
+  Function setScreenNumber;
+  ScreenQ(this.func1, this.func2, this.setScreenNumber);
   @override
   _ScreenQState createState() => _ScreenQState();
 }
@@ -13,6 +14,7 @@ class ScreenQ extends StatefulWidget {
 class _ScreenQState extends State<ScreenQ> {
   @override
   Widget build(BuildContext context) {
+    widget.setScreenNumber(0);
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         // Toast.show("Swipe up on pill for options", context, duration: Toast.LENGTH_SHORT, gravity:  Toast.BOTTOM);

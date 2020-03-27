@@ -5,6 +5,8 @@ import './bg.dart';
 import 'dart:async';
 
 class Screen2 extends StatefulWidget {
+  Function setScreenNumber;
+  Screen2(this.setScreenNumber);
   @override
   _Screen2State createState() => _Screen2State();
 }
@@ -12,15 +14,13 @@ class Screen2 extends StatefulWidget {
 class _Screen2State extends State<Screen2> {
   @override
   Widget build(BuildContext context) {
+    AudioCache player = AudioCache();
+    player.play('sound/Win.mp3');
+    widget.setScreenNumber(0);
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         // Toast.show("Swipe up on pill for options", context, duration: Toast.LENGTH_SHORT, gravity:  Toast.BOTTOM);
-        Future<AudioPlayer> playLocalAsset() async {
-          AudioCache cache = new AudioCache();
-          return await cache.play("Win.mp3");
-        }
 
-        playLocalAsset();
         return Center(
           child: Stack(
             children: <Widget>[

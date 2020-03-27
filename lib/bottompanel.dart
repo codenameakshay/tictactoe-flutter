@@ -7,10 +7,15 @@ import 'package:audioplayers/audioplayers.dart';
 import 'dart:io';
 import 'dart:async';
 
-class BottomPanel extends StatelessWidget {
+class BottomPanel extends StatefulWidget {
   PanelController controller;
   BottomPanel({this.controller});
 
+  @override
+  _BottomPanelState createState() => _BottomPanelState();
+}
+
+class _BottomPanelState extends State<BottomPanel> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -49,12 +54,9 @@ class BottomPanel extends StatelessWidget {
                             horizontal: 10, vertical: 15),
                         child: ListTile(
                           onTap: () {
-                            Future<AudioPlayer> playLocalAsset() async {
-                              AudioCache cache = new AudioCache();
-                              return await cache.play("Restart.mp3");
-                            }
+                            AudioCache player = AudioCache();
+                            player.play('sound/Restart.mp3');
 
-                            playLocalAsset();
                             Navigator.push(
                               context,
                               PageRouteBuilder(

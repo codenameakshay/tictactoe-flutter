@@ -46,16 +46,20 @@ class _GameButtonState extends State<GameButton> {
             : widget.bg,
         elevation: 0,
         child: widget.enabled == 1
-            ? (widget.cross == 1 ? Text('X') : Text('O'))
+            ? (widget.cross == 1
+                ? Text(
+                    'X',
+                    style: TextStyle(fontFamily: "IBM Plex Sans", fontSize: 36),
+                  )
+                : Text(
+                    'O',
+                    style: TextStyle(fontFamily: "IBM Plex Sans", fontSize: 36),
+                  ))
             : Text(widget.text),
         onPressed: () {
-          Future<AudioPlayer> playLocalAsset() async {
-            AudioCache cache = new AudioCache();
-            return await cache.play("ButtonPress.mp3");
-          }
-          SystemSound.play(SystemSoundType.click);
+          AudioCache player = AudioCache();
+          player.play('sound/ButtonPress.mp3');
 
-          playLocalAsset();
           HapticFeedback.vibrate();
           setState(() {
             if (widget.lbget() == "X") {

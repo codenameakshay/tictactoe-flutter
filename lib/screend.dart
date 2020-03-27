@@ -6,8 +6,9 @@ import './bg.dart';
 import 'dart:io';
 import 'dart:async';
 
-
 class ScreenD extends StatefulWidget {
+  Function setScreenNumber;
+  ScreenD(this.setScreenNumber);
   @override
   _ScreenDState createState() => _ScreenDState();
 }
@@ -15,15 +16,13 @@ class ScreenD extends StatefulWidget {
 class _ScreenDState extends State<ScreenD> {
   @override
   Widget build(BuildContext context) {
+    AudioCache player = AudioCache();
+    player.play('sound/Draw.mp3');
+    widget.setScreenNumber(0);
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         // widget.controller.animatePanelToPosition(1);
-        Future<AudioPlayer> playLocalAsset() async {
-          AudioCache cache = new AudioCache();
-          return await cache.play("Draw.mp3");
-        }
 
-        playLocalAsset();
         return Center(
           child: Stack(
             children: <Widget>[
@@ -88,4 +87,3 @@ class _ScreenDState extends State<ScreenD> {
     );
   }
 }
-

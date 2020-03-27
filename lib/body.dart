@@ -58,10 +58,24 @@ class _BodyState extends State<Body> {
     });
   }
 
+  void setScreenNumber(int value) {
+    screenNumber = value;
+  }
+
   @override
   Widget build(BuildContext context) {
     if (widget.isBackButton) {
       screenNumber = 4;
+      Future.delayed(Duration.zero, () {
+        Navigator.push(
+          context,
+          PageRouteBuilder(
+            transitionDuration: Duration(seconds: 1),
+            pageBuilder: (_, __, ___) => ScreenQ(
+                setBackButton, widget.backButtonChange, setScreenNumber),
+          ),
+        );
+      });
     } else {
       if ((enabledButton[0] == 1 &&
               enabledButton[1] == 1 &&
@@ -112,6 +126,15 @@ class _BodyState extends State<Body> {
               crossButton[4] == 1 &&
               crossButton[6] == 1)) {
         screenNumber = 1;
+        Future.delayed(Duration.zero, () {
+          Navigator.push(
+            context,
+            PageRouteBuilder(
+              transitionDuration: Duration(seconds: 1),
+              pageBuilder: (_, __, ___) => Screen1(setScreenNumber),
+            ),
+          );
+        });
       } else if ((enabledButton[0] == 1 &&
               enabledButton[1] == 1 &&
               enabledButton[2] == 1 &&
@@ -161,6 +184,15 @@ class _BodyState extends State<Body> {
               noughtButton[4] == 1 &&
               noughtButton[6] == 1)) {
         screenNumber = 2;
+        Future.delayed(Duration.zero, () {
+          Navigator.push(
+            context,
+            PageRouteBuilder(
+              transitionDuration: Duration(seconds: 1),
+              pageBuilder: (_, __, ___) => Screen2(setScreenNumber),
+            ),
+          );
+        });
       } else if (enabledButton[0] == 1 &&
           enabledButton[1] == 1 &&
           enabledButton[2] == 1 &&
@@ -171,6 +203,15 @@ class _BodyState extends State<Body> {
           enabledButton[7] == 1 &&
           enabledButton[8] == 1) {
         screenNumber = 3;
+        Future.delayed(Duration.zero, () {
+          Navigator.push(
+            context,
+            PageRouteBuilder(
+              transitionDuration: Duration(seconds: 1),
+              pageBuilder: (_, __, ___) => ScreenD(setScreenNumber),
+            ),
+          );
+        });
       } else {
         screenNumber = 0;
       }
@@ -186,11 +227,12 @@ class _BodyState extends State<Body> {
             setNoughtButton,
           )
         : (screenNumber == 1)
-            ? Screen1()
+            ? Screen1(setScreenNumber)
             : (screenNumber == 2)
-                ? Screen2()
+                ? Screen2(setScreenNumber)
                 : (screenNumber == 3)
-                    ? ScreenD()
-                    : ScreenQ(setBackButton, widget.backButtonChange);
+                    ? ScreenD(setScreenNumber)
+                    : ScreenQ(setBackButton, widget.backButtonChange,
+                        setScreenNumber);
   }
 }
