@@ -1,16 +1,12 @@
-# tictactoe
+# Tic-Tac-Toe
 
-A new Flutter project.
+A game made with Flutter, Tic-Tac-Toe takes up on the famous game and therefore two players can play this game. The game is made with beautiful UI and animations, splash screen, bottom panel, with sound effects too.
 
-## Getting Started
+# ScreenShot
 
-This project is a starting point for a Flutter application.
+![ScreenRecording](examples/Screen.mp4)
+![MainUI](examples/ScreenUI.png)
 
-A few resources to get you started if this is your first Flutter project:
+# Download
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+You can download the app from the examples\app-release.apk .
