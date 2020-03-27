@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:back_button_interceptor/back_button_interceptor.dart';
 import './bottompanel.dart';
 import './body.dart';
 import './titlebar.dart';
@@ -10,7 +11,40 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  var isBackButton = false;
+  @override
+  void initState() {
+    super.initState();
+    BackButtonInterceptor.add(myInterceptor);
+    var isBackButton = false;
+  }
+
+  @override
+  void dispose() {
+    BackButtonInterceptor.remove(myInterceptor);
+    super.dispose();
+  }
+
+  bool myInterceptor(bool stopDefaultButtonEvent) {
+    print("BACK BUTTON!"); // Do some stuff.
+    setState(() {
+      isBackButton = true;
+    });
+    return true;
+  }
+
+  void backButtonChange() {
+    setState(() {
+      isBackButton = isBackButton ? false : true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // Future<bool> _onBackPressed() {
@@ -21,11 +55,11 @@ class MyApp extends StatelessWidget {
     //         title: Text('Do you really want to exit the app?'),
     //         actions: <Widget>[
     //           FlatButton(
-    //             onPressed: () => Navigator.of(context).maybePop(),
+    //             onPressed: () => Navigator.pop(context, false),
     //             child: Text('No'),
     //           ),
     //           FlatButton(
-    //             onPressed: () => Navigator.of(context).maybePop(),
+    //             onPressed: () => Navigator.pop(context, true),
     //             child: Text('Yes'),
     //           ),
     //         ],
@@ -62,12 +96,15 @@ class MyApp extends StatelessWidget {
               margin: EdgeInsets.only(top: constraints.maxHeight / 7.039999),
               backdropEnabled: true,
               panel: BottomPanel(controller: controller),
-              body: Body(controller: controller),
+              body: Body(
+                  controller: controller,
+                  isBackButton: isBackButton,
+                  backButtonChange: backButtonChange),
             );
           },
         ),
+        // ),
       ),
-      // ),
     );
   }
 }

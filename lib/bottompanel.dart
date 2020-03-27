@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:tictactoe/main.dart';
 import './pill.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'dart:io';
+import 'dart:async';
 
 class BottomPanel extends StatelessWidget {
   PanelController controller;
@@ -46,10 +49,19 @@ class BottomPanel extends StatelessWidget {
                             horizontal: 10, vertical: 15),
                         child: ListTile(
                           onTap: () {
-                            Navigator.of(context)
-                                .push(MaterialPageRoute(builder: (context) {
-                              return MyApp();
-                            }));
+                            Future<AudioPlayer> playLocalAsset() async {
+                              AudioCache cache = new AudioCache();
+                              return await cache.play("Restart.mp3");
+                            }
+
+                            playLocalAsset();
+                            Navigator.push(
+                              context,
+                              PageRouteBuilder(
+                                transitionDuration: Duration(seconds: 1),
+                                pageBuilder: (_, __, ___) => MyApp(),
+                              ),
+                            );
                           },
                           leading: Icon(
                             Icons.refresh,
