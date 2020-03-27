@@ -4,7 +4,7 @@ A game made with Flutter, Tic-Tac-Toe takes up on the famous game and therefore 
 
 # ScreenShot
 
-![ScreenRecording](examples/Screen.mp4)
+![ScreenRecording](examples/Screen.gif)
 ![MainUI](examples/ScreenUI.png)
 
 # Download
