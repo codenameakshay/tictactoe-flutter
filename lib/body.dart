@@ -62,306 +62,6 @@ class _BodyState extends State<Body> {
 
   @override
   Widget build(BuildContext context) {
-    Widget screenZero;
-    Widget screenOne;
-    Widget screenTwo;
-    Widget screenDraw;
-    // Widget screenQuit;
-    // screenQuit = null;
-    screenOne = LayoutBuilder(
-      builder: (BuildContext context, BoxConstraints constraints) {
-        // Toast.show("Swipe up on pill for options", context, duration: Toast.LENGTH_SHORT, gravity:  Toast.BOTTOM);
-        Future<AudioPlayer> playLocalAsset() async {
-          AudioCache cache = new AudioCache();
-          return await cache.play("Win.mp3");
-        }
-
-        playLocalAsset();
-
-        return Center(
-          child: Stack(
-            children: <Widget>[
-              Container(
-                width: constraints.maxWidth,
-                height: constraints.maxHeight / 0.97986,
-                child: Card(
-                  margin: EdgeInsets.only(
-                    bottom: constraints.maxHeight / 7.83888,
-                  ),
-                  child: RotatedBox(quarterTurns: 2, child: BG()),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.only(
-                  top: constraints.maxHeight / 2.83888,
-                  left: constraints.maxWidth / 6.9995,
-                  right: constraints.maxWidth / 100.9995,
-                  bottom: constraints.maxHeight / 1051.1984,
-                ),
-                width: constraints.maxWidth / 1.15262,
-                height: constraints.maxHeight / 1.90648,
-                child: Hero(
-                  tag: "card-result",
-                  child: Card(
-                    color: Color(0xffe5e5e5),
-                    elevation: 10,
-                    child: Stack(
-                      children: <Widget>[
-                        Container(
-                          margin: EdgeInsets.symmetric(
-                              vertical: constraints.maxHeight / 20.67777,
-                              horizontal: constraints.maxWidth / 15.99999),
-                          width: constraints.maxWidth / 0.99999,
-                          height: constraints.maxWidth / 0.83888,
-                          child: Center(
-                            child: Column(
-                              children: <Widget>[
-                                Text(
-                                  'Player 1 Won!',
-                                  style: TextStyle(
-                                      fontSize: 20, fontFamily: "Nunito"),
-                                ),
-                                Text(
-                                  'Swipe up for restart',
-                                  style: TextStyle(
-                                      fontSize: 10, fontFamily: "Nunito"),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              )
-            ],
-          ),
-        );
-      },
-    );
-    screenTwo = LayoutBuilder(
-      builder: (BuildContext context, BoxConstraints constraints) {
-        // Toast.show("Swipe up on pill for options", context, duration: Toast.LENGTH_SHORT, gravity:  Toast.BOTTOM);
-        Future<AudioPlayer> playLocalAsset() async {
-          AudioCache cache = new AudioCache();
-          return await cache.play("Win.mp3");
-        }
-
-        playLocalAsset();
-        return Center(
-          child: Stack(
-            children: <Widget>[
-              Container(
-                width: constraints.maxWidth,
-                height: constraints.maxHeight / 0.97986,
-                child: Card(
-                  margin: EdgeInsets.only(
-                    bottom: constraints.maxHeight / 7.83888,
-                  ),
-                  child: RotatedBox(quarterTurns: 2, child: BG()),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.only(
-                  top: constraints.maxHeight / 2.83888,
-                  left: constraints.maxWidth / 6.9995,
-                  right: constraints.maxWidth / 100.9995,
-                  bottom: constraints.maxHeight / 1051.1984,
-                ),
-                width: constraints.maxWidth / 1.15262,
-                height: constraints.maxHeight / 1.90648,
-                child: Hero(
-                  tag: "card-result",
-                  child: Card(
-                    color: Color(0xffe5e5e5),
-                    elevation: 10,
-                    child: Stack(
-                      children: <Widget>[
-                        Container(
-                          margin: EdgeInsets.symmetric(
-                              vertical: constraints.maxHeight / 20.67777,
-                              horizontal: constraints.maxWidth / 15.99999),
-                          width: constraints.maxWidth / 0.99999,
-                          height: constraints.maxWidth / 0.83888,
-                          child: Center(
-                            child: Column(
-                              children: <Widget>[
-                                Text(
-                                  'Player 2 Won!',
-                                  style: TextStyle(
-                                      fontSize: 20, fontFamily: "Nunito"),
-                                ),
-                                Text(
-                                  'Swipe up for restart',
-                                  style: TextStyle(
-                                      fontSize: 10, fontFamily: "Nunito"),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              )
-            ],
-          ),
-        );
-      },
-    );
-    screenDraw = LayoutBuilder(
-      builder: (BuildContext context, BoxConstraints constraints) {
-        // widget.controller.animatePanelToPosition(1);
-        Future<AudioPlayer> playLocalAsset() async {
-          AudioCache cache = new AudioCache();
-          return await cache.play("Draw.mp3");
-        }
-
-        playLocalAsset();
-        return Center(
-          child: Stack(
-            children: <Widget>[
-              Container(
-                width: constraints.maxWidth,
-                height: constraints.maxHeight / 0.97986,
-                child: Card(
-                  margin: EdgeInsets.only(
-                    bottom: constraints.maxHeight / 7.83888,
-                  ),
-                  child: RotatedBox(quarterTurns: 2, child: BG()),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.only(
-                  top: constraints.maxHeight / 2.83888,
-                  left: constraints.maxWidth / 6.9995,
-                  right: constraints.maxWidth / 100.9995,
-                  bottom: constraints.maxHeight / 1051.1984,
-                ),
-                width: constraints.maxWidth / 1.15262,
-                height: constraints.maxHeight / 1.90648,
-                child: Hero(
-                  tag: "card-result",
-                  child: Card(
-                    color: Color(0xffe5e5e5),
-                    elevation: 10,
-                    child: Stack(
-                      children: <Widget>[
-                        Container(
-                          margin: EdgeInsets.symmetric(
-                              vertical: constraints.maxHeight / 20.67777,
-                              horizontal: constraints.maxWidth / 15.99999),
-                          width: constraints.maxWidth / 0.99999,
-                          height: constraints.maxWidth / 0.83888,
-                          child: Center(
-                            child: Column(
-                              children: <Widget>[
-                                Text(
-                                  'Match Draw!',
-                                  style: TextStyle(
-                                      fontSize: 20, fontFamily: "Nunito"),
-                                ),
-                                Text(
-                                  'Swipe up for restart',
-                                  style: TextStyle(
-                                      fontSize: 10, fontFamily: "Nunito"),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              )
-            ],
-          ),
-        );
-      },
-    );
-    screenZero = LayoutBuilder(
-      builder: (BuildContext context, BoxConstraints constraints) {
-        return Center(
-          child: Stack(
-            children: <Widget>[
-              Container(
-                width: constraints.maxWidth,
-                height: constraints.maxHeight / 0.97986,
-                child: Card(
-                  margin: EdgeInsets.only(
-                    bottom: constraints.maxHeight / 7.83888,
-                  ),
-                  child: RotatedBox(quarterTurns: 2, child: BG()),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.only(
-                  top: constraints.maxHeight / 7.83888,
-                  left: constraints.maxWidth / 19.9995,
-                  bottom: constraints.maxHeight / 11.1984,
-                ),
-                width: constraints.maxWidth / 1.05262,
-                height: constraints.maxHeight / 1.30648,
-                child: Hero(
-                  tag: "card-result",
-                  child: AnimatedOpacity(
-                    opacity: 1.0,
-                    duration: Duration(milliseconds: 500),
-                    child: Card(
-                      color: Color(0xffe5e5e5),
-                      elevation: 10,
-                      child: Stack(
-                        children: <Widget>[
-                          Container(
-                            margin: EdgeInsets.symmetric(
-                                vertical: constraints.maxHeight / 15.67777,
-                                horizontal: constraints.maxWidth / 15.99999),
-                            width: constraints.maxWidth / 0.99999,
-                            height: constraints.maxWidth / 0.83888,
-                            child: Grid(),
-                          ),
-                          Container(
-                            margin: EdgeInsets.symmetric(
-                                vertical: constraints.maxHeight / 13.67777,
-                                horizontal: constraints.maxWidth / 15.99999),
-                            child: GridView.count(
-                              crossAxisCount: 3,
-                              children: List.generate(
-                                9,
-                                (index) {
-                                  return Container(
-                                    padding: EdgeInsets.all(
-                                        constraints.maxWidth / 24),
-                                    child: GameButton(
-                                      id: index,
-                                      text: '',
-                                      enabled: enabledButton[index],
-                                      cross: crossButton[index],
-                                      lbset: lastButton,
-                                      lbget: lastButtonValue,
-                                      sebv: setEnabledButton,
-                                      scbv: setCrossButton,
-                                      snbv: setNoughtButton,
-                                    ),
-                                  );
-                                },
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              )
-            ],
-          ),
-        );
-      },
-    );
     if (widget.isBackButton) {
       screenNumber = 4;
     } else {
@@ -478,20 +178,29 @@ class _BodyState extends State<Body> {
       }
     }
     return (screenNumber == 0)
-        ? screenZero
+        ? ScreenZ(
+            enabledButton,
+            crossButton,
+            lastButton,
+            lastButtonValue,
+            setEnabledButton,
+            setCrossButton,
+            setNoughtButton,
+          )
         : (screenNumber == 1)
-            ? screenOne
+            ? Screen1()
             : (screenNumber == 2)
-                ? screenTwo
-                : (screenNumber == 3) ? screenDraw : ScreenQ(setBackButton,widget.backButtonChange);
+                ? Screen2()
+                : (screenNumber == 3)
+                    ? ScreenD()
+                    : ScreenQ(setBackButton, widget.backButtonChange);
   }
 }
-
 
 class ScreenQ extends StatefulWidget {
   Function func1;
   Function func2;
-  ScreenQ(this.func1,this.func2);
+  ScreenQ(this.func1, this.func2);
   @override
   _ScreenQState createState() => _ScreenQState();
 }
@@ -594,6 +303,360 @@ class _ScreenQState extends State<ScreenQ> {
                           ),
                         ),
                       ],
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+        );
+      },
+    );
+  }
+}
+
+class Screen1 extends StatefulWidget {
+  @override
+  _Screen1State createState() => _Screen1State();
+}
+
+class _Screen1State extends State<Screen1> {
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        // Toast.show("Swipe up on pill for options", context, duration: Toast.LENGTH_SHORT, gravity:  Toast.BOTTOM);
+        Future<AudioPlayer> playLocalAsset() async {
+          AudioCache cache = new AudioCache();
+          return await cache.play("Win.mp3");
+        }
+
+        playLocalAsset();
+
+        return Center(
+          child: Stack(
+            children: <Widget>[
+              Container(
+                width: constraints.maxWidth,
+                height: constraints.maxHeight / 0.97986,
+                child: Card(
+                  margin: EdgeInsets.only(
+                    bottom: constraints.maxHeight / 7.83888,
+                  ),
+                  child: RotatedBox(quarterTurns: 2, child: BG()),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(
+                  top: constraints.maxHeight / 2.83888,
+                  left: constraints.maxWidth / 6.9995,
+                  right: constraints.maxWidth / 100.9995,
+                  bottom: constraints.maxHeight / 1051.1984,
+                ),
+                width: constraints.maxWidth / 1.15262,
+                height: constraints.maxHeight / 1.90648,
+                child: Hero(
+                  tag: "card-result",
+                  child: Card(
+                    color: Color(0xffe5e5e5),
+                    elevation: 10,
+                    child: Stack(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.symmetric(
+                              vertical: constraints.maxHeight / 20.67777,
+                              horizontal: constraints.maxWidth / 15.99999),
+                          width: constraints.maxWidth / 0.99999,
+                          height: constraints.maxWidth / 0.83888,
+                          child: Center(
+                            child: Column(
+                              children: <Widget>[
+                                Text(
+                                  'Player 1 Won!',
+                                  style: TextStyle(
+                                      fontSize: 20, fontFamily: "Nunito"),
+                                ),
+                                Text(
+                                  'Swipe up for restart',
+                                  style: TextStyle(
+                                      fontSize: 10, fontFamily: "Nunito"),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+        );
+      },
+    );
+  }
+}
+
+class Screen2 extends StatefulWidget {
+  @override
+  _Screen2State createState() => _Screen2State();
+}
+
+class _Screen2State extends State<Screen2> {
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        // Toast.show("Swipe up on pill for options", context, duration: Toast.LENGTH_SHORT, gravity:  Toast.BOTTOM);
+        Future<AudioPlayer> playLocalAsset() async {
+          AudioCache cache = new AudioCache();
+          return await cache.play("Win.mp3");
+        }
+
+        playLocalAsset();
+        return Center(
+          child: Stack(
+            children: <Widget>[
+              Container(
+                width: constraints.maxWidth,
+                height: constraints.maxHeight / 0.97986,
+                child: Card(
+                  margin: EdgeInsets.only(
+                    bottom: constraints.maxHeight / 7.83888,
+                  ),
+                  child: RotatedBox(quarterTurns: 2, child: BG()),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(
+                  top: constraints.maxHeight / 2.83888,
+                  left: constraints.maxWidth / 6.9995,
+                  right: constraints.maxWidth / 100.9995,
+                  bottom: constraints.maxHeight / 1051.1984,
+                ),
+                width: constraints.maxWidth / 1.15262,
+                height: constraints.maxHeight / 1.90648,
+                child: Hero(
+                  tag: "card-result",
+                  child: Card(
+                    color: Color(0xffe5e5e5),
+                    elevation: 10,
+                    child: Stack(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.symmetric(
+                              vertical: constraints.maxHeight / 20.67777,
+                              horizontal: constraints.maxWidth / 15.99999),
+                          width: constraints.maxWidth / 0.99999,
+                          height: constraints.maxWidth / 0.83888,
+                          child: Center(
+                            child: Column(
+                              children: <Widget>[
+                                Text(
+                                  'Player 2 Won!',
+                                  style: TextStyle(
+                                      fontSize: 20, fontFamily: "Nunito"),
+                                ),
+                                Text(
+                                  'Swipe up for restart',
+                                  style: TextStyle(
+                                      fontSize: 10, fontFamily: "Nunito"),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+        );
+      },
+    );
+  }
+}
+
+class ScreenD extends StatefulWidget {
+  @override
+  _ScreenDState createState() => _ScreenDState();
+}
+
+class _ScreenDState extends State<ScreenD> {
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        // widget.controller.animatePanelToPosition(1);
+        Future<AudioPlayer> playLocalAsset() async {
+          AudioCache cache = new AudioCache();
+          return await cache.play("Draw.mp3");
+        }
+
+        playLocalAsset();
+        return Center(
+          child: Stack(
+            children: <Widget>[
+              Container(
+                width: constraints.maxWidth,
+                height: constraints.maxHeight / 0.97986,
+                child: Card(
+                  margin: EdgeInsets.only(
+                    bottom: constraints.maxHeight / 7.83888,
+                  ),
+                  child: RotatedBox(quarterTurns: 2, child: BG()),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(
+                  top: constraints.maxHeight / 2.83888,
+                  left: constraints.maxWidth / 6.9995,
+                  right: constraints.maxWidth / 100.9995,
+                  bottom: constraints.maxHeight / 1051.1984,
+                ),
+                width: constraints.maxWidth / 1.15262,
+                height: constraints.maxHeight / 1.90648,
+                child: Hero(
+                  tag: "card-result",
+                  child: Card(
+                    color: Color(0xffe5e5e5),
+                    elevation: 10,
+                    child: Stack(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.symmetric(
+                              vertical: constraints.maxHeight / 20.67777,
+                              horizontal: constraints.maxWidth / 15.99999),
+                          width: constraints.maxWidth / 0.99999,
+                          height: constraints.maxWidth / 0.83888,
+                          child: Center(
+                            child: Column(
+                              children: <Widget>[
+                                Text(
+                                  'Match Draw!',
+                                  style: TextStyle(
+                                      fontSize: 20, fontFamily: "Nunito"),
+                                ),
+                                Text(
+                                  'Swipe up for restart',
+                                  style: TextStyle(
+                                      fontSize: 10, fontFamily: "Nunito"),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+        );
+      },
+    );
+  }
+}
+
+class ScreenZ extends StatefulWidget {
+  List enabledButton;
+  List crossButton;
+  Function lastButton;
+  Function lastButtonValue;
+  Function setEnabledButton;
+  Function setCrossButton;
+  Function setNoughtButton;
+
+  ScreenZ(
+      this.enabledButton,
+      this.crossButton,
+      this.lastButton,
+      this.lastButtonValue,
+      this.setEnabledButton,
+      this.setCrossButton,
+      this.setNoughtButton);
+  @override
+  _ScreenZState createState() => _ScreenZState();
+}
+
+class _ScreenZState extends State<ScreenZ> {
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        return Center(
+          child: Stack(
+            children: <Widget>[
+              Container(
+                width: constraints.maxWidth,
+                height: constraints.maxHeight / 0.97986,
+                child: Card(
+                  margin: EdgeInsets.only(
+                    bottom: constraints.maxHeight / 7.83888,
+                  ),
+                  child: RotatedBox(quarterTurns: 2, child: BG()),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(
+                  top: constraints.maxHeight / 7.83888,
+                  left: constraints.maxWidth / 19.9995,
+                  bottom: constraints.maxHeight / 11.1984,
+                ),
+                width: constraints.maxWidth / 1.05262,
+                height: constraints.maxHeight / 1.30648,
+                child: Hero(
+                  tag: "card-result",
+                  child: AnimatedOpacity(
+                    opacity: 1.0,
+                    duration: Duration(milliseconds: 500),
+                    child: Card(
+                      color: Color(0xffe5e5e5),
+                      elevation: 10,
+                      child: Stack(
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                                vertical: constraints.maxHeight / 15.67777,
+                                horizontal: constraints.maxWidth / 15.99999),
+                            width: constraints.maxWidth / 0.99999,
+                            height: constraints.maxWidth / 0.83888,
+                            child: Grid(),
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                                vertical: constraints.maxHeight / 13.67777,
+                                horizontal: constraints.maxWidth / 15.99999),
+                            child: GridView.count(
+                              crossAxisCount: 3,
+                              children: List.generate(
+                                9,
+                                (index) {
+                                  return Container(
+                                    padding: EdgeInsets.all(
+                                        constraints.maxWidth / 24),
+                                    child: GameButton(
+                                      id: index,
+                                      text: '',
+                                      enabled: widget.enabledButton[index],
+                                      cross: widget.crossButton[index],
+                                      lbset: widget.lastButton,
+                                      lbget: widget.lastButtonValue,
+                                      sebv: widget.setEnabledButton,
+                                      scbv: widget.setCrossButton,
+                                      snbv: widget.setNoughtButton,
+                                    ),
+                                  );
+                                },
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
