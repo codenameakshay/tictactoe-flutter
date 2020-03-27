@@ -53,6 +53,7 @@ class _GameButtonState extends State<GameButton> {
             AudioCache cache = new AudioCache();
             return await cache.play("ButtonPress.mp3");
           }
+          SystemSound.play(SystemSoundType.click);
 
           playLocalAsset();
           HapticFeedback.vibrate();
