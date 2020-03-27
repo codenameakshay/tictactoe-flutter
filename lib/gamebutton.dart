@@ -45,11 +45,19 @@ class _GameButtonState extends State<GameButton> {
             : widget.bg,
         elevation: 0,
         child: widget.enabled == 1
-            ? (widget.cross == 1 ? Text('X') : Text('O'))
+            ? (widget.cross == 1
+                ? Text(
+                    'X',
+                    style: TextStyle(fontSize: 36, fontFamily: "Nunito"),
+                  )
+                : Text(
+                    'O',
+                    style: TextStyle(fontSize: 36, fontFamily: "Nunito"),
+                  ))
             : Text(widget.text),
         onPressed: () {
           AudioCache player = AudioCache();
-        player.play('sound/ButtonPress.mp3');
+          player.play('sound/ButtonPress.mp3');
 
           HapticFeedback.vibrate();
           setState(() {
